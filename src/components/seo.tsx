@@ -6,9 +6,9 @@
  */
 
 import { graphql, useStaticQuery } from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import Helmet from 'react-helmet'
+import { MetadataQuery } from './__generated__/MetadataQuery'
 
 type Meta = {
   name: string
@@ -36,9 +36,9 @@ function SEO({
   meta = defaultProps.meta,
   title = defaultProps.title,
 }) {
-  const { site } = useStaticQuery(
+  const { site }: MetadataQuery = useStaticQuery(
     graphql`
-      query {
+      query MetadataQuery {
         site {
           siteMetadata {
             title
@@ -50,7 +50,7 @@ function SEO({
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description ?? site?.siteMetadata?.description ?? ''
 
   return (
     <Helmet
@@ -58,7 +58,7 @@ function SEO({
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site?.siteMetadata?.title}`}
       meta={[
         {
           name: `description`,
@@ -82,7 +82,7 @@ function SEO({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: site?.siteMetadata?.author ?? '',
         },
         {
           name: `twitter:title`,

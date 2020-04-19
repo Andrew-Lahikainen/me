@@ -8,7 +8,7 @@ type Props = {
 const Header = ({ siteTitle = '' }: Props) => (
   <header
     style={{
-      background: `rebeccapurple`,
+      background: `var(--primary)`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -23,7 +23,7 @@ const Header = ({ siteTitle = '' }: Props) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: 'var(--accent)',
             textDecoration: `none`,
           }}
         >

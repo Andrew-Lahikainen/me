@@ -1,0 +1,16 @@
+html {
+  font-family: 'Work Sans', sans-serif;
+  color: white;
+}
+
+html,
+body,
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}

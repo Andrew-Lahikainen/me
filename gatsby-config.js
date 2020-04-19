@@ -1,4 +1,6 @@
 require('ts-node').register({ files: true })
+const postcssPresetEnv = require('postcss-preset-env')
+const postcssNormalize = require('postcss-normalize')
 
 module.exports = {
   siteMetadata: {
@@ -14,6 +16,12 @@ module.exports = {
         watch: process.env.NODE_ENV === 'development',
       },
     },
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [postcssPresetEnv({ stage: 2 }), postcssNormalize()],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -22,6 +30,18 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Work Sans`,
+            variants: [300, 400, 500, 600, 700],
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-svg-sprite`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
