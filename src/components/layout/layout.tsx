@@ -1,10 +1,11 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
+import { Header } from '../header'
 import styles from './layout.module.css'
-import Sidebar from './sidebar'
 
 type Props = {
   children: React.ReactChild[]
+  centered: boolean
 }
 
 const query = graphql`
@@ -17,13 +18,13 @@ const query = graphql`
   }
 `
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, centered }: Props) => {
   const data = useStaticQuery(query)
 
   return (
     <div className={styles.layout}>
-      <Sidebar className={styles.sidebar}></Sidebar>
-      <main className={styles.main}>{children}</main>
+      <Header></Header>
+      <main className={`${styles.main} ${centered ? styles.mainCentered : ''}`}>{children}</main>
     </div>
   )
 }

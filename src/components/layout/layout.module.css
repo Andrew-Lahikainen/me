@@ -1,0 +1,16 @@
+.layout {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.main {
+  width: 100%;
+}
+
+.main-centered {
+  max-width: 780px;
+  margin: 0 auto;
+}
