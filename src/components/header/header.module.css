@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 64px;
+  padding: 6px 12px;
+  background-color: #006a71;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 10000px;
+  transition: background-color 200ms var(--easing-standard);
+}
+
+.nav-item:hover,
+.nav-item-active {
+  background-color: var(--primary-dark);
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 12px;
+}
+
+.nav-item-icon {
+  margin-right: 12px;
+}
