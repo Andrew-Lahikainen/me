@@ -1,0 +1,5 @@
+:root {
+  --easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-accel: cubic-bezier(0.4, 0, 1, 1);
+  --easing-decel: cubic-bezier(0, 0, 0.2, 1);
+}
