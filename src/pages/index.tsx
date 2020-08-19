@@ -1,11 +1,11 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import Image from '../components/image'
-import Layout from '../components/layout'
+import Layout from '../components/layout/layout'
 import SEO from '../components/seo'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout centered={true}>
     <SEO title="Home" />
     <h1>Hi people</h1>
     <p className="body-1">Welcome to your new Gatsby site.</p>
