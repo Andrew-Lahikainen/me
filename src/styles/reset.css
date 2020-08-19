@@ -1,6 +1,6 @@
 html {
-  font-family: 'Work Sans', sans-serif;
-  color: white;
+  font-family: Lato, sans-serif;
+  color: var(--text-color);
 }
 
 html,
@@ -13,4 +13,14 @@ body,
 
 body {
   margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
