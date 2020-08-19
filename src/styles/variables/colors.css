@@ -1,7 +1,7 @@
 :root {
-  --primary: #1c3c49;
-  --primary-light: #465e6a;
-  --primary-dark: #19313c;
+  --primary: #006a71;
+  --primary-light: #1a848b;
+  --primary-dark: #005158;
 
   --secondary: #251a2b;
   --secondary-light: #382e3e;
@@ -10,4 +10,8 @@
   --accent: #ffcf68;
   --accent-light: #ffd783;
   --accent-dark: #ba974c;
+
+  --background-color: white;
+  --text-color: rgba(0, 0, 0, 0.87);
+  --border-color: #d8d8d8;
 }
