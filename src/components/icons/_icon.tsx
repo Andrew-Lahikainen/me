@@ -5,28 +5,30 @@ export type IconProps = {
   width?: number
   fill?: string
   className?: string
+  style?: Record<string, string | number>
 }
 
 const DefaultProps: IconProps = {
   height: 24,
   width: 24,
+  style: { verticalAlign: 'middle' },
 }
 
 export const createIconComponent = (
   svg: BrowserSpriteSymbol
-): React.FunctionComponent<IconProps> => ({
-  height = DefaultProps.height,
-  width = DefaultProps.width,
-  fill,
-  className,
-}: IconProps) => (
-  <svg
-    className={className ?? ''}
-    fill={fill}
-    height={height}
-    width={width}
-    style={{ verticalAlign: 'middle' }}
-  >
-    <use xlinkHref={`#${svg.id}`}></use>
-  </svg>
-)
+): React.FunctionComponent<IconProps> => (props: IconProps) => {
+  props = { ...DefaultProps, ...props }
+  props.style = { ...DefaultProps.style, ...props.style }
+
+  return (
+    <svg
+      className={props.className ?? ''}
+      fill={props.fill}
+      height={props.height}
+      width={props.width}
+      style={props.style}
+    >
+      <use xlinkHref={`#${svg.id}`}></use>
+    </svg>
+  )
+}
