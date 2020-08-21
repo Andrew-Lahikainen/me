@@ -4,8 +4,8 @@ import { Header } from '../header'
 import styles from './layout.module.css'
 
 type Props = {
-  children: React.ReactChild[]
-  centered: boolean
+  children: React.ReactChild | React.ReactChild[]
+  centered?: boolean
 }
 
 const query = graphql`
