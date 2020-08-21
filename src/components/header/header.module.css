@@ -8,6 +8,11 @@
   color: white;
 }
 
+.heading-link {
+  text-decoration: none;
+  color: white;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
